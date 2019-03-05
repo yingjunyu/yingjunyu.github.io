@@ -1,0 +1,570 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+
+    
+
+    
+    <title>Django2初步使用-20181217 | Hexo</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="PYTHON" />
+    
+    <meta name="description" content="Django2初步使用之前跟着教程学习过Django1的使用，对于路由、分库什么的都没有做深入研究。说来惭愧，现在真的是浅尝即止。话虽如此，还是腆着脸来写一下这段时间初步尝试Django2的一些体会，见笑了。 1. Django2的路由这点我比较喜欢，之前的Django1只能用正则表达式的方式来写，虽说正则表达式看上去不难，但是我自己觉得比较晦涩，不太喜欢这种表达方式（除非是做爬虫），Django">
+<meta name="keywords" content="PYTHON">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Django2初步使用-20181217">
+<meta property="og:url" content="http://yoursite.com/2018/12/17/Django2初步使用-20181217/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Django2初步使用之前跟着教程学习过Django1的使用，对于路由、分库什么的都没有做深入研究。说来惭愧，现在真的是浅尝即止。话虽如此，还是腆着脸来写一下这段时间初步尝试Django2的一些体会，见笑了。 1. Django2的路由这点我比较喜欢，之前的Django1只能用正则表达式的方式来写，虽说正则表达式看上去不难，但是我自己觉得比较晦涩，不太喜欢这种表达方式（除非是做爬虫），Django">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2018-12-17T02:38:10.346Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Django2初步使用-20181217">
+<meta name="twitter:description" content="Django2初步使用之前跟着教程学习过Django1的使用，对于路由、分库什么的都没有做深入研究。说来惭愧，现在真的是浅尝即止。话虽如此，还是腆着脸来写一下这段时间初步尝试Django2的一些体会，见笑了。 1. Django2的路由这点我比较喜欢，之前的Django1只能用正则表达式的方式来写，虽说正则表达式看上去不难，但是我自己觉得比较晦涩，不太喜欢这种表达方式（除非是做爬虫），Django">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="http://www.wumeisz.net">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-Django2初步使用-20181217" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        Django2初步使用-20181217
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2018/12/17/Django2初步使用-20181217/" class="article-date">
+            <time datetime="2018-12-17T01:28:32.000Z" itemprop="datePublished">2018-12-17</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/PYTHON/">PYTHON</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="Django2初步使用"><a href="#Django2初步使用" class="headerlink" title="Django2初步使用"></a>Django2初步使用</h2><p>之前跟着教程学习过Django1的使用，对于路由、分库什么的都没有做深入研究。说来惭愧，现在真的是浅尝即止。话虽如此，还是腆着脸来写一下这段时间初步尝试Django2的一些体会，见笑了。</p>
+<h3 id="1-Django2的路由"><a href="#1-Django2的路由" class="headerlink" title="1. Django2的路由"></a>1. Django2的路由</h3><p>这点我比较喜欢，之前的Django1只能用正则表达式的方式来写，虽说正则表达式看上去不难，但是我自己觉得比较晦涩，不太喜欢这种表达方式（除非是做爬虫），Django2在这方面有了选择，可以采用 <b><font color="red">path(‘index/‘, index)</font></b> 的方式，有了这种方式，至少对我来说感觉方便了很多。至于路由的选择依然是MTV模式，没有什么改变。</p>
+<h3 id="2-多应用分库"><a href="#2-多应用分库" class="headerlink" title="2. 多应用分库"></a>2. 多应用分库</h3><p>这是在实际生产中必然会用到的，其实应该和Django1一样，只不过在之前的自学中自己没有去实践过，在这次的学习中实践了一下，所以就写在这里了，大致来说的步骤是：</p>
+<p>1 用manange.py生成应用，并且在settings.py的install_app小节注册一下新建的的应用。</p>
+<p>2 在urls.py里面引入生成的应用view类，然后配置路由（更好的做法自然应该是在应用下面配置urls，然后引入。）</p>
+<p>3 可选步骤，一般情况下，执行完上述步骤后就可以完成多应用分库的操作，只不过这时的template目录是在站点的根目录下的，如果想每个独立的应用都有自己的template文件夹的话，需要做一是将template文件夹移到应用的根目录下，然后还需要修改站点的settings.py里面的内容，在’DIRS’:后面写上如下的内容。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">TEMPLATES = [</span><br><span class="line">    &#123;</span><br><span class="line">        &apos;BACKEND&apos;: &apos;django.template.backends.django.DjangoTemplates&apos;,</span><br><span class="line">        &apos;DIRS&apos;: [os.path.join(BASE_DIR, &apos;templates/&apos;)]</span><br></pre></td></tr></table></figure>
+<p>当然还可以做的更好，就是把所有的应用统一放到一个目录下，比如apps目录，这需要继续修改settings.py关于路径的设置内容。不过这个没有实践，就不写了。</p>
+<h3 id="3-编辑器Ckeditor的使用"><a href="#3-编辑器Ckeditor的使用" class="headerlink" title="3. 编辑器Ckeditor的使用"></a>3. 编辑器Ckeditor的使用</h3><p>这个编辑器做为一般建站可能都会用上吧，大致的使用步骤是：</p>
+<p>1 安装，pip install django-ckeditor 需要上传图片的话，还需要安装pillow。</p>
+<p>2 在settings.py里设置，需要设置的内容是：<br>1） 在install_app小节里面增加 <b><font color="red">‘ckeditor_uploader’和’ckeditor’</font></b> 内容，前者用来上传图片、多媒体文件等用。</p>
+<p>2） 增加如下的配置代码<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">CKEDITOR_JQUERY_URL =&apos;https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js&apos;</span><br><span class="line">CKEDITOR_IMAGE_BACKEND = &apos;pillow&apos;</span><br><span class="line">CKEDITOR_UPLOAD_PATH = &apos;uploads/&apos;</span><br><span class="line"># Static files (CSS, JavaScript, Images)</span><br><span class="line"># https://docs.djangoproject.com/en/2.0/howto/static-files/</span><br><span class="line"></span><br><span class="line">CKEDITOR_CONFIGS = &#123;</span><br><span class="line">    &apos;default&apos;: &#123;</span><br><span class="line">        &apos;toolbar&apos;: (</span><br><span class="line">			[&apos;div&apos;,&apos;Source&apos;,&apos;-&apos;,&apos;Save&apos;,&apos;NewPage&apos;,&apos;Preview&apos;,&apos;-&apos;,&apos;Templates&apos;], </span><br><span class="line">			[&apos;Cut&apos;,&apos;Copy&apos;,&apos;Paste&apos;,&apos;PasteText&apos;,&apos;PasteFromWord&apos;,&apos;-&apos;,&apos;Print&apos;,&apos;SpellChecker&apos;,&apos;Scayt&apos;], </span><br><span class="line">			[&apos;Undo&apos;,&apos;Redo&apos;,&apos;-&apos;,&apos;Find&apos;,&apos;Replace&apos;,&apos;-&apos;,&apos;SelectAll&apos;,&apos;RemoveFormat&apos;], </span><br><span class="line">			[&apos;Form&apos;,&apos;Checkbox&apos;,&apos;Radio&apos;,&apos;TextField&apos;,&apos;Textarea&apos;,&apos;Select&apos;,&apos;Button&apos;, &apos;ImageButton&apos;,&apos;HiddenField&apos;], </span><br><span class="line">			[&apos;Bold&apos;,&apos;Italic&apos;,&apos;Underline&apos;,&apos;Strike&apos;,&apos;-&apos;,&apos;Subscript&apos;,&apos;Superscript&apos;], </span><br><span class="line">			[&apos;NumberedList&apos;,&apos;BulletedList&apos;,&apos;-&apos;,&apos;Outdent&apos;,&apos;Indent&apos;,&apos;Blockquote&apos;], </span><br><span class="line">			[&apos;JustifyLeft&apos;,&apos;JustifyCenter&apos;,&apos;JustifyRight&apos;,&apos;JustifyBlock&apos;], </span><br><span class="line">			[&apos;Link&apos;,&apos;Unlink&apos;,&apos;Anchor&apos;], </span><br><span class="line">			[&apos;Image&apos;,&apos;Flash&apos;,&apos;Table&apos;,&apos;HorizontalRule&apos;,&apos;Smiley&apos;,&apos;SpecialChar&apos;,&apos;PageBreak&apos;], </span><br><span class="line">			[&apos;Styles&apos;,&apos;Format&apos;,&apos;Font&apos;,&apos;FontSize&apos;], </span><br><span class="line">			[&apos;TextColor&apos;,&apos;BGColor&apos;], </span><br><span class="line">			[&apos;Maximize&apos;,&apos;ShowBlocks&apos;,&apos;-&apos;,&apos;About&apos;, &apos;pbckcode&apos;],</span><br><span class="line">		),</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>上面的congfig代码是我找的网上的例子，默认情况下的ck是不会打开媒体文件上传的选项的，需要在congfig里面配置，具体是哪一行起作用，没有研究，不敢乱说。</p>
+<p>除此之外，还需要对static路径和media路径进行设置，代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">STATIC_URL = &apos;/static/&apos;</span><br><span class="line">#STATIC_ROOT = os.path.join(BASE_DIR,&apos;static/&apos;)</span><br><span class="line">STATICFILES_DIRS = (</span><br><span class="line">    os.path.join(BASE_DIR, &quot;static&quot;),</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">MEDIA_URL = &apos;/media/&apos;</span><br><span class="line">MEDIA_ROOT = os.path.join(BASE_DIR, &quot;media&quot;)</span><br><span class="line">#CKEDITOR_UPLOAD_PATH = &apos;uploads/&apos;</span><br></pre></td></tr></table></figure></p>
+<p>上面的代码其实和django1使用ck差不多。</p>
+<p>3） 同步静态文件，用 <b><font color="red">python manage.py collectstatic</font></b> 命令同步静态文件。<br>完成上述步骤后，就可以测试一下效果，如果代码都写的没问题，站点也可以跑起来的话，多半会有一个问题，就是图片上传成功，但是在ck编辑器内和页面上都无法显示，反正我是碰到了这个问题的，就算从github上面下载的完整的例子也有这个问题。最后还是求助网络和ck的官方文档，还需要在 urlpatterns = [……] 的最后写上 + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)就可以了。</p>
+<h3 id="4-和Pyecharts的集成"><a href="#4-和Pyecharts的集成" class="headerlink" title="4. 和Pyecharts的集成"></a>4. 和Pyecharts的集成</h3><p>首先来说，这个是有官方帮助可以看的，例子也写得比较详细。这里就不赘述了，我自己实践的时候只是碰到了一个问题，就是某个页面上有其他内容的时候，直接放上官方文档的例子没有任何效果，没有深入研究什么原因，我采取了比较简单粗暴的解决方法，直接用了一个iframe加载。</p>
+<p>大概就是以上这几点吧，也没做太多的实践，不敢多写，就先到这吧。:)</p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="http://yoursite.com/2018/12/17/Django2初步使用-20181217/" data-id="cjps43l4r00007svc125p3ooh" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2018/12/17/插件大全/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Cordova 插件大全
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2018/08/16/利用pyecharts制作图表/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">利用pyecharts制作图表</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/17/插件大全/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/17/插件大全/" class="title">Cordova 插件大全</a></p>
+                            <p class="item-date"><time datetime="2018-12-17T09:16:21.000Z" itemprop="datePublished">2018-12-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/12/17/Django2初步使用-20181217/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/12/17/Django2初步使用-20181217/" class="title">Django2初步使用-20181217</a></p>
+                            <p class="item-date"><time datetime="2018-12-17T01:28:32.000Z" itemprop="datePublished">2018-12-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/16/利用pyecharts制作图表/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/16/利用pyecharts制作图表/" class="title">利用pyecharts制作图表</a></p>
+                            <p class="item-date"><time datetime="2018-08-16T02:55:23.000Z" itemprop="datePublished">2018-08-16</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2018/08/16/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2018/08/16/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2018-08-16T01:24:18.987Z" itemprop="datePublished">2018-08-16</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IONIC/">IONIC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYTHON/">PYTHON</a><span class="tag-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/IONIC/" style="font-size: 10px;">IONIC</a> <a href="/tags/PYTHON/" style="font-size: 20px;">PYTHON</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2018 John Doe</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'http://yoursite.com/2018/12/17/Django2初步使用-20181217/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
