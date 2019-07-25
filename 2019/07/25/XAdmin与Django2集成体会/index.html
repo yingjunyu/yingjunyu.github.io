@@ -12,19 +12,19 @@
     
         <meta name="keywords" content="PYTHON">
     
-    <meta name="description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的gi">
+    <meta name="description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install:https://codeload.github.com/sshwsfc/xadmin/zip/django2。 附上作者的g">
 <meta name="keywords" content="PYTHON">
 <meta property="og:type" content="article">
 <meta property="og:title" content="XAdmin与Django2集成体会">
 <meta property="og:url" content="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的gi">
+<meta property="og:description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install:https://codeload.github.com/sshwsfc/xadmin/zip/django2。 附上作者的g">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png">
-<meta property="og:updated_time" content="2019-07-25T09:31:35.168Z">
+<meta property="og:updated_time" content="2019-07-25T09:35:12.021Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="XAdmin与Django2集成体会">
-<meta name="twitter:description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的gi">
+<meta name="twitter:description" content="XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下： 1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install:https://codeload.github.com/sshwsfc/xadmin/zip/django2。 附上作者的g">
 <meta name="twitter:image" content="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png">
     
 
@@ -171,7 +171,9 @@
         
         <div class="article-entry" itemprop="articleBody">
             <h2 id="XAdmin与Django集成体会"><a href="#XAdmin与Django集成体会" class="headerlink" title="XAdmin与Django集成体会"></a>XAdmin与Django集成体会</h2><p>xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下：</p>
-<h3 id="1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip-install-https-codeload-github-com-sshwsfc-xadmin-zip-django2。附上组着的github地址：https-github-com-sshwsfc-xadmin"><a href="#1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip-install-https-codeload-github-com-sshwsfc-xadmin-zip-django2。附上组着的github地址：https-github-com-sshwsfc-xadmin" class="headerlink" title="1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的github地址：https://github.com/sshwsfc/xadmin"></a>1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install <a href="https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的github地址：https://github.com/sshwsfc/xadmin" target="_blank" rel="noopener">https://codeload.github.com/sshwsfc/xadmin/zip/django2。附上组着的github地址：https://github.com/sshwsfc/xadmin</a></h3><h3 id="2、配置：主要修改的地方一个是setting-py和urls-py"><a href="#2、配置：主要修改的地方一个是setting-py和urls-py" class="headerlink" title="2、配置：主要修改的地方一个是setting.py和urls.py"></a>2、配置：主要修改的地方一个是setting.py和urls.py</h3><p>settiong.py修改如下<br><img src="//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png" alt="001"></p>
+<h3 id="1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法："><a href="#1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：" class="headerlink" title="1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法："></a>1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：</h3><p>pip install:<a href="https://codeload.github.com/sshwsfc/xadmin/zip/django2。" target="_blank" rel="noopener">https://codeload.github.com/sshwsfc/xadmin/zip/django2。</a></p>
+<p>附上作者的github地址：<a href="https://github.com/sshwsfc/xadmin" target="_blank" rel="noopener">https://github.com/sshwsfc/xadmin</a></p>
+<h3 id="2、配置：主要修改的地方一个是setting-py和urls-py"><a href="#2、配置：主要修改的地方一个是setting-py和urls-py" class="headerlink" title="2、配置：主要修改的地方一个是setting.py和urls.py"></a>2、配置：主要修改的地方一个是setting.py和urls.py</h3><p>settiong.py修改如下<br><img src="//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png" alt="001"></p>
 <p>urls.py修改如下：<br><img src="//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/002.png" alt="002"></p>
 <h3 id="3、应用：首先执行-python-manage-py-migrate命令，然后就可以启动服务器了，python-manage-py-runserver。再就是进入后台管理界面，大致能看到如下风格的界面效果："><a href="#3、应用：首先执行-python-manage-py-migrate命令，然后就可以启动服务器了，python-manage-py-runserver。再就是进入后台管理界面，大致能看到如下风格的界面效果：" class="headerlink" title="3、应用：首先执行 python manage.py migrate命令，然后就可以启动服务器了，python manage.py runserver。再就是进入后台管理界面，大致能看到如下风格的界面效果："></a>3、应用：首先执行 python manage.py migrate命令，然后就可以启动服务器了，python manage.py runserver。再就是进入后台管理界面，大致能看到如下风格的界面效果：</h3><p><img src="//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/003.png" alt="003"></p>
 <h3 id="4、xadmin的bug问题：在应用过程中碰到了添加用户小插件报错的情况，查了资料以后主要需要修改site-packages-xadmin-views下的dashboard-py中的render方法，具体改成下面的内容："><a href="#4、xadmin的bug问题：在应用过程中碰到了添加用户小插件报错的情况，查了资料以后主要需要修改site-packages-xadmin-views下的dashboard-py中的render方法，具体改成下面的内容：" class="headerlink" title="4、xadmin的bug问题：在应用过程中碰到了添加用户小插件报错的情况，查了资料以后主要需要修改site-packages\xadmin\views下的dashboard.py中的render方法，具体改成下面的内容："></a>4、xadmin的bug问题：在应用过程中碰到了添加用户小插件报错的情况，查了资料以后主要需要修改site-packages\xadmin\views下的dashboard.py中的render方法，具体改成下面的内容：</h3><p><img src="//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/004.png" alt="004"></p>
@@ -183,7 +185,7 @@
 
 
 
-    <a data-url="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/" data-id="cjyih9j390005swrgqa3f0x25" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/" data-id="cjyihe5w100006srgc4q1co3m" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
