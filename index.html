@@ -148,6 +148,110 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
+        <a href="/2019/10/23/studio升级后gradle报错问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/10/23/studio升级后gradle报错问题/000.png)" alt="studio升级后gradle报错问题" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/10/23/studio升级后gradle报错问题/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2019-10-23T13:39:25.000Z" itemprop="datePublished">2019-10-23</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/10/23/studio升级后gradle报错问题/">studio升级后gradle报错问题</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            近日将Android Studio升级到了3.5.1，结果在编译程序时都会报gradle的错误
+
+提示的信息类似于：Could not find com.android.tools.build:gradle:3.0.1
+最终的解决方法是，增加google()，如下图所示中文注释的地方
+
+增加以后就可以正常编译程序了
+
+
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/10/23/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/10/23/hello-world/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2019-10-23T11:02:07.288Z" itemprop="datePublished">2019-10-23</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/10/23/hello-world/">Hello World</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
         <a href="/2019/10/22/Django缓存系统/" class="thumbnail">
     
     
@@ -195,17 +299,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/08/01/Django2初步使用-静态文件加载-20190801/" class="thumbnail">
+        <a href="/2019/09/26/ionic4集成高德地图/" class="thumbnail">
     
     
-        <span style="background-image:url(//yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/001.png)" alt="Django2初步使用-静态文件加载-20190801" class="thumbnail-image"></span>
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4集成高德地图/01.png)" alt="ionic4集成高德地图" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/09/26/ionic4集成高德地图/">0</span>
     
 </span>
 
@@ -218,19 +322,23 @@
             <div class="category">
             
             </div>
-            <div class="date"><time datetime="2019-08-01T09:32:16.000Z" itemprop="datePublished">2019-08-01</time></div>
+            <div class="date"><time datetime="2019-09-26T15:27:42.000Z" itemprop="datePublished">2019-09-26</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/08/01/Django2初步使用-静态文件加载-20190801/">Django2初步使用-静态文件加载-20190801</a>
+        <a href="/2019/09/26/ionic4集成高德地图/">ionic4集成高德地图</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Django2初步使用-静态文件加载1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹2、在工程的settings.py中配置，如下图所示：
-3、前端引入，例如index.html文件，如下图所示：
-4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。最后感谢简书作者文章，附上链接
+            一：key首先去高德开发者平台注册一个账号，然后在申请一个key。需要注意的是获取安全码SHA1和PackageName
+1：获取SHA1打开cmd，目录定位在c盘/users/用户名文件/.android,然后输入输入命令
+1keytool -list -v -keystore debug.keystore
+
+像这样：
+你可能会报错：密钥库文件不存在: debug.keystore， 
+你可以打
         </p>
     </div>
 </article>
@@ -247,17 +355,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/07/25/XAdmin与Django2集成体会/" class="thumbnail">
+        <a href="/2019/09/26/ionic4路由跳转/" class="thumbnail">
     
     
-        <span style="background-image:url(//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png)" alt="XAdmin与Django2集成体会" class="thumbnail-image"></span>
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4路由跳转/01.png)" alt="ionic4路由跳转" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/09/26/ionic4路由跳转/">0</span>
     
 </span>
 
@@ -270,19 +378,22 @@
             <div class="category">
             
             </div>
-            <div class="date"><time datetime="2019-07-25T09:16:21.000Z" itemprop="datePublished">2019-07-25</time></div>
+            <div class="date"><time datetime="2019-09-26T15:12:07.000Z" itemprop="datePublished">2019-09-26</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/25/XAdmin与Django2集成体会/">XAdmin与Django2集成体会</a>
+        <a href="/2019/09/26/ionic4路由跳转/">ionic4路由跳转</a>
         </h1>
     
 
         <p class="article-excerpt">
-            XAdmin与Django集成体会xadmin是比较符合国人习惯的一个后台管理的界面，在与django2集成的时候还是碰到了很多问题，不过后来都解决，现在简单列一下：
-1、安装：网上这方面的文档比较多，比较靠谱的还是github上作者自己写的安装方法：pip install:https://codeload.github.com/sshwsfc/xadmin/zip/django2。
-附上作者的g
+            1.普通路由跳转
+2.路由跳转传值
+图解
+3.NavController 返回上一页Ionic4.x 中从 tabs 切换页面跳转到其他页面，使用 ion-back-button 返回的话，默认都会返回到    tab1 页面。如果我们想从那个 tab 页面跳转过去就返回到指定的 tab 页面的话，这时候就要用到 NavController 里面提到的 back 方法。
+完整代码
+4.NavCon
         </p>
     </div>
 </article>
@@ -295,68 +406,7 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2019/07/24/Scrapy初步使用/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//yingjunyu.github.io/2019/07/24/Scrapy初步使用/001.png)" alt="Scrapy初步使用" class="thumbnail-image"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/07/24/Scrapy初步使用/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2019-07-24T09:37:40.000Z" itemprop="datePublished">2019-07-24</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2019/07/24/Scrapy初步使用/">Scrapy初步使用</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Scrapy初步使用
-
-        </p>
-    </div>
-</article>
-    
-        </div>
-    
-
-    
-    
-        
-            </div></section>
-        
-        
-        <section class="archives-wrap">
-            <div class="archive-year-wrap">
-                <a href="/archives/2018" class="archive-year"><i class="icon fa fa-calendar-o"></i>2018</a>
-            </div>
-            <div class="archives">
-    
-    
-    
-        <div class="article-row">
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/12/17/插件大全/" class="thumbnail">
+        <a href="/2019/09/26/Anaconda常用的简单命令/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -366,7 +416,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2018/12/17/插件大全/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/09/26/Anaconda常用的简单命令/">0</span>
     
 </span>
 
@@ -379,65 +429,17 @@
             <div class="category">
             
             </div>
-            <div class="date"><time datetime="2018-12-17T09:16:21.000Z" itemprop="datePublished">2018-12-17</time></div>
+            <div class="date"><time datetime="2019-09-26T15:07:37.000Z" itemprop="datePublished">2019-09-26</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/12/17/插件大全/">Cordova 插件大全</a>
+        <a href="/2019/09/26/Anaconda常用的简单命令/">Anaconda常用的简单命令</a>
         </h1>
     
 
         <p class="article-excerpt">
-            cordova 插件大全https://www.jianshu.com/p/642c9be55446
-
-        </p>
-    </div>
-</article>
-    
-
-    
-    
-    
-    
-        <article class="article article-summary">
-    <div class="article-summary-inner">
-        
-        <a href="/2018/12/17/Django2初步使用-20181217/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-        
-<span class="comment-counter">
-    <i class="fa fa-comments-o"></i>
-    
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2018/12/17/Django2初步使用-20181217/">0</span>
-    
-</span>
-
-
-    
-</a>
-
-        
-        <div class="article-meta">
-            <div class="category">
-            
-            </div>
-            <div class="date"><time datetime="2018-12-17T01:28:32.000Z" itemprop="datePublished">2018-12-17</time></div>
-        </div>
-        
-    
-        <h1 class="article-title" itemprop="name">
-        <a href="/2018/12/17/Django2初步使用-20181217/">Django2初步使用-20181217</a>
-        </h1>
-    
-
-        <p class="article-excerpt">
-            Django2初步使用之前跟着教程学习过Django1的使用，对于路由、分库什么的都没有做深入研究。说来惭愧，现在真的是浅尝即止。话虽如此，还是腆着脸来写一下这段时间初步尝试Django2的一些体会，见笑了。
-1. Django2的路由这点我比较喜欢，之前的Django1只能用正则表达式的方式来写，虽说正则表达式看上去不难，但是我自己觉得比较晦涩，不太喜欢这种表达方式（除非是做爬虫），Django
+            Anaconda常用的简单命令conda info -e  查看当前虚拟环境conda create python36 创建了python36的虚拟环境activate python36 激活python36的虚拟环境conda list 查看已经安装的包conda install package_name 安装一些包，其中package_name为包的名字conda remove package
         </p>
     </div>
 </article>
@@ -454,7 +456,7 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/08/16/利用pyecharts制作图表/" class="thumbnail">
+        <a href="/2019/09/26/xpath语法/" class="thumbnail">
     
     
         <span class="thumbnail-image thumbnail-none"></span>
@@ -464,7 +466,7 @@
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2018/08/16/利用pyecharts制作图表/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/09/26/xpath语法/">0</span>
     
 </span>
 
@@ -477,20 +479,21 @@
             <div class="category">
             
             </div>
-            <div class="date"><time datetime="2018-08-16T02:55:23.000Z" itemprop="datePublished">2018-08-16</time></div>
+            <div class="date"><time datetime="2019-09-25T17:25:10.000Z" itemprop="datePublished">2019-09-26</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/08/16/利用pyecharts制作图表/">利用pyecharts制作图表</a>
+        <a href="/2019/09/26/xpath语法/">xpath语法</a>
         </h1>
     
 
         <p class="article-excerpt">
-            利用Pyecharts制作图表pyecharts是基于Echart图表的一个类库，主要基于Web浏览器进行显示，绘制的图形比较多，包括折线图、柱状图、饼图、漏斗图、地图、极坐标图等，代码量少，而且很灵活，绘制出来的图形也很美观。
-1. 安装pyecharts1pip install pyecharts
+            1.选取节点“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点123/html   查询到一个结果/div    查询到0个结果，因为根节点以下只有一个html子节点/html/body  查询到1个结果
 
-2. 一般性应用（制作柱状图为例）1234567from pyecharts import B
+“//”  查询所有子孙节点12//head/script//div
+
+“.”   选取当前节点“..”  选取当前节点的父节点“@”   选取属性1
         </p>
     </div>
 </article>
@@ -503,17 +506,17 @@
         <article class="article article-summary">
     <div class="article-summary-inner">
         
-        <a href="/2018/08/16/hello-world/" class="thumbnail">
+        <a href="/2019/08/19/20190819-Scrapy学习-爬取基金基本信息和Logging使用/" class="thumbnail">
     
     
-        <span class="thumbnail-image thumbnail-none"></span>
+        <span style="background-image:url(//yingjunyu.github.io/2019/08/19/20190819-Scrapy学习-爬取基金基本信息和Logging使用/001.png)" alt="20190819-Scrapy学习-爬取基金基本信息和Logging使用" class="thumbnail-image"></span>
     
     
         
 <span class="comment-counter">
     <i class="fa fa-comments-o"></i>
     
-        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2018/08/16/hello-world/">0</span>
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/08/19/20190819-Scrapy学习-爬取基金基本信息和Logging使用/">0</span>
     
 </span>
 
@@ -526,18 +529,115 @@
             <div class="category">
             
             </div>
-            <div class="date"><time datetime="2018-08-16T01:24:18.987Z" itemprop="datePublished">2018-08-16</time></div>
+            <div class="date"><time datetime="2019-08-19T15:15:05.000Z" itemprop="datePublished">2019-08-19</time></div>
         </div>
         
     
         <h1 class="article-title" itemprop="name">
-        <a href="/2018/08/16/hello-world/">Hello World</a>
+        <a href="/2019/08/19/20190819-Scrapy学习-爬取基金基本信息和Logging使用/">20190819-Scrapy学习-爬取基金基本信息和Logging使用</a>
         </h1>
     
 
         <p class="article-excerpt">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick
+            本次以爬取基金的编码、名称、净值和净值日期做为爬取目标（暂不涉及翻页），目标网址是：http://fund.eastmoney.com/trade/hh.html?spm=001.1.swh#zwf_,sc_1n,st_desc，同时对Logging模块的使用进行初步学习，学习记录如下1、创建工程dfcf，scrapy startproject dfcf2、创建爬虫getfund，scrapy g
+        </p>
+    </div>
+</article>
+    
+        </div>
+    
+
+    
+    
+    
+    
+        <div class="article-row">
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/08/18/Django2使用XAdmin管理后台内容/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/08/18/Django2使用XAdmin管理后台内容/005.png)" alt="Django2使用XAdmin管理后台内容" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/08/18/Django2使用XAdmin管理后台内容/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2019-08-18T15:11:29.000Z" itemprop="datePublished">2019-08-18</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/18/Django2使用XAdmin管理后台内容/">Django2使用XAdmin管理后台内容</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Django2使用XAdmin管理后台内容基本步骤和用django自带的admin差不多，也是通过类似于admin.sites.regitser方法来实现，具体分为以下几步：1、首先要实现django2与xadmin的集成，这个看之前的笔记2、在app的目录下，建立adminx.py文件，然后注册，本次学习的代码如下：
+以上的代码，比较好理解，只是使用xadmin管理后台页面，一定要有list_d
+        </p>
+    </div>
+</article>
+    
+
+    
+    
+    
+    
+        <article class="article article-summary">
+    <div class="article-summary-inner">
+        
+        <a href="/2019/08/18/Django2动态渲染页面学习/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/08/18/Django2动态渲染页面学习/001.png)" alt="Django2动态渲染页面学习" class="thumbnail-image"></span>
+    
+    
+        
+<span class="comment-counter">
+    <i class="fa fa-comments-o"></i>
+    
+        <span class="disqus-comment-count" data-disqus-identifier="" data-disqus-url="https://yingjunyu.github.io/2019/08/18/Django2动态渲染页面学习/">0</span>
+    
+</span>
+
+
+    
+</a>
+
+        
+        <div class="article-meta">
+            <div class="category">
+            
+            </div>
+            <div class="date"><time datetime="2019-08-18T15:02:57.000Z" itemprop="datePublished">2019-08-18</time></div>
+        </div>
+        
+    
+        <h1 class="article-title" itemprop="name">
+        <a href="/2019/08/18/Django2动态渲染页面学习/">Django2动态渲染页面学习</a>
+        </h1>
+    
+
+        <p class="article-excerpt">
+            Django2动态渲染页面学习1、Django2动态渲染页面学习
+本次学习使用sqlite3数据库，因此不需要修改settings.py文件的数据连接配置。然后进行数据库创建，使用命令：python manage.py makemigrations和python manage.py migrate即可，不过在执行上述命令的使用碰到了一个问题，就是num_count字段始终提示缺少缺省值之类的错误，
         </p>
     </div>
 </article>
@@ -548,6 +648,11 @@ Quick
 
     </div></section>
 
+
+    <nav id="page-nav">
+        <span class="pages">第 1 页，共 2 页</span>
+        <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">&raquo;</a>
+    </nav>
 
 
                         </div>
@@ -624,6 +729,46 @@ Quick
                     <li>
                         
                         <div class="item-thumbnail">
+                            <a href="/2019/10/23/studio升级后gradle报错问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/10/23/studio升级后gradle报错问题/000.png)" alt="studio升级后gradle报错问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/23/studio升级后gradle报错问题/" class="title">studio升级后gradle报错问题</a></p>
+                            <p class="item-date"><time datetime="2019-10-23T13:39:25.000Z" itemprop="datePublished">2019-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/23/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/23/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2019-10-23T11:02:07.288Z" itemprop="datePublished">2019-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
                             <a href="/2019/10/22/Django缓存系统/" class="thumbnail">
     
     
@@ -644,10 +789,10 @@ Quick
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/08/01/Django2初步使用-静态文件加载-20190801/" class="thumbnail">
+                            <a href="/2019/09/26/ionic4集成高德地图/" class="thumbnail">
     
     
-        <span style="background-image:url(//yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/001.png)" alt="Django2初步使用-静态文件加载-20190801" class="thumbnail-image"></span>
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4集成高德地图/01.png)" alt="ionic4集成高德地图" class="thumbnail-image"></span>
     
     
 </a>
@@ -656,38 +801,18 @@ Quick
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/08/01/Django2初步使用-静态文件加载-20190801/" class="title">Django2初步使用-静态文件加载-20190801</a></p>
-                            <p class="item-date"><time datetime="2019-08-01T09:32:16.000Z" itemprop="datePublished">2019-08-01</time></p>
+                            <p class="item-title"><a href="/2019/09/26/ionic4集成高德地图/" class="title">ionic4集成高德地图</a></p>
+                            <p class="item-date"><time datetime="2019-09-26T15:27:42.000Z" itemprop="datePublished">2019-09-26</time></p>
                         </div>
                     </li>
                 
                     <li>
                         
                         <div class="item-thumbnail">
-                            <a href="/2019/07/25/XAdmin与Django2集成体会/" class="thumbnail">
+                            <a href="/2019/09/26/ionic4路由跳转/" class="thumbnail">
     
     
-        <span style="background-image:url(//yingjunyu.github.io/2019/07/25/XAdmin与Django2集成体会/001.png)" alt="XAdmin与Django2集成体会" class="thumbnail-image"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/25/XAdmin与Django2集成体会/" class="title">XAdmin与Django2集成体会</a></p>
-                            <p class="item-date"><time datetime="2019-07-25T09:16:21.000Z" itemprop="datePublished">2019-07-25</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2019/07/24/Scrapy初步使用/" class="thumbnail">
-    
-    
-        <span style="background-image:url(//yingjunyu.github.io/2019/07/24/Scrapy初步使用/001.png)" alt="Scrapy初步使用" class="thumbnail-image"></span>
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4路由跳转/01.png)" alt="ionic4路由跳转" class="thumbnail-image"></span>
     
     
 </a>
@@ -696,28 +821,8 @@ Quick
                         
                         <div class="item-inner">
                             <p class="item-category"></p>
-                            <p class="item-title"><a href="/2019/07/24/Scrapy初步使用/" class="title">Scrapy初步使用</a></p>
-                            <p class="item-date"><time datetime="2019-07-24T09:37:40.000Z" itemprop="datePublished">2019-07-24</time></p>
-                        </div>
-                    </li>
-                
-                    <li>
-                        
-                        <div class="item-thumbnail">
-                            <a href="/2018/12/17/插件大全/" class="thumbnail">
-    
-    
-        <span class="thumbnail-image thumbnail-none"></span>
-    
-    
-</a>
-
-                        </div>
-                        
-                        <div class="item-inner">
-                            <p class="item-category"></p>
-                            <p class="item-title"><a href="/2018/12/17/插件大全/" class="title">Cordova 插件大全</a></p>
-                            <p class="item-date"><time datetime="2018-12-17T09:16:21.000Z" itemprop="datePublished">2018-12-17</time></p>
+                            <p class="item-title"><a href="/2019/09/26/ionic4路由跳转/" class="title">ionic4路由跳转</a></p>
+                            <p class="item-date"><time datetime="2019-09-26T15:12:07.000Z" itemprop="datePublished">2019-09-26</time></p>
                         </div>
                     </li>
                 
@@ -733,7 +838,7 @@ Quick
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">归档</h3>
         <div class="widget">
-            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">2</span></li></ul>
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li></ul>
         </div>
     </div>
 
@@ -743,7 +848,7 @@ Quick
     <div class="widget-wrap widget-list">
         <h3 class="widget-title">标签</h3>
         <div class="widget">
-            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/IONIC/">IONIC</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYTHON/">PYTHON</a><span class="tag-list-count">6</span></li></ul>
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ANDROID/">ANDROID</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IONIC/">IONIC</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYTHON/">PYTHON</a><span class="tag-list-count">11</span></li></ul>
         </div>
     </div>
 
@@ -753,7 +858,7 @@ Quick
     <div class="widget-wrap widget-float">
         <h3 class="widget-title">标签云</h3>
         <div class="widget tagcloud">
-            <a href="/tags/IONIC/" style="font-size: 10px;">IONIC</a> <a href="/tags/PYTHON/" style="font-size: 20px;">PYTHON</a>
+            <a href="/tags/ANDROID/" style="font-size: 10px;">ANDROID</a> <a href="/tags/IONIC/" style="font-size: 15px;">IONIC</a> <a href="/tags/PYTHON/" style="font-size: 20px;">PYTHON</a>
         </div>
     </div>
 

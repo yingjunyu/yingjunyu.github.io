@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta charset="utf-8">
+
+    
+
+    
+    <title>xpath语法 | Hexo</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+        <meta name="keywords" content="PYTHON">
+    
+    <meta name="description" content="1.选取节点“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点123/html   查询到一个结果/div    查询到0个结果，因为根节点以下只有一个html子节点/html/body  查询到1个结果  “//”  查询所有子孙节点12//head/script//div  “.”   选取当前节点“..”  选取当前节点的父节点“@”   选取属性1">
+<meta name="keywords" content="PYTHON">
+<meta property="og:type" content="article">
+<meta property="og:title" content="xpath语法">
+<meta property="og:url" content="https://yingjunyu.github.io/2019/09/26/xpath语法/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1.选取节点“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点123/html   查询到一个结果/div    查询到0个结果，因为根节点以下只有一个html子节点/html/body  查询到1个结果  “//”  查询所有子孙节点12//head/script//div  “.”   选取当前节点“..”  选取当前节点的父节点“@”   选取属性1">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-09-26T15:23:56.994Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="xpath语法">
+<meta name="twitter:description" content="1.选取节点“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点123/html   查询到一个结果/div    查询到0个结果，因为根节点以下只有一个html子节点/html/body  查询到1个结果  “//”  查询所有子孙节点12//head/script//div  “.”   选取当前节点“..”  选取当前节点的父节点“@”   选取属性1">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml">
+    
+
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/titillium-web/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/3.3.1/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+
+
+</head>
+</html>
+<body>
+    <div id="wrap">
+        <header id="header">
+    <div id="header-outer" class="outer">
+        <div class="container">
+            <div class="container-inner">
+                <div id="header-title">
+                    <h1 class="logo-wrap">
+                        <a href="/" class="logo"></a>
+                    </h1>
+                    
+                </div>
+                <div id="header-inner" class="nav-container">
+                    <a id="main-nav-toggle" class="nav-icon fa fa-bars"></a>
+                    <div class="nav-container-inner">
+                        <ul id="main-nav">
+                            
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="/">主页</a>
+                                </li>
+                            
+                                        
+                                    
+                                <li class="main-nav-list-item" >
+                                    <a class="main-nav-list-link" href="http://www.wumeisz.net">关于</a>
+                                </li>
+                            
+                        </ul>
+                        <nav id="sub-nav">
+                            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="搜索" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="想要查找什么..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: '文章',
+            PAGES: '页面',
+            CATEGORIES: '分类',
+            TAGS: '标签',
+            UNTITLED: '(未命名)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+        <div class="container">
+            <div class="main-body container-inner">
+                <div class="main-body-inner">
+                    <section id="main">
+                        <div class="main-body-header">
+    <h1 class="header">
+    
+    未分类
+    </h1>
+</div>
+                        <div class="main-body-content">
+                            <article id="post-xpath语法" class="article article-single article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+        xpath语法
+        </h1>
+    
+
+            </header>
+        
+        
+            <div class="article-meta">
+                
+    <div class="article-date">
+        <a href="/2019/09/26/xpath语法/" class="article-date">
+            <time datetime="2019-09-25T17:25:10.000Z" itemprop="datePublished">2019-09-26</time>
+        </a>
+    </div>
+
+                
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/PYTHON/">PYTHON</a>
+    </div>
+
+            </div>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+            <h2 id="1-选取节点"><a href="#1-选取节点" class="headerlink" title="1.选取节点"></a>1.选取节点</h2><h3 id="“-”-如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点-只查询子一辈的节点"><a href="#“-”-如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点-只查询子一辈的节点" class="headerlink" title="“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点"></a>“/”   如果是在最前面，代表从根节点选取，否则选择某节点下的某个节点.只查询子一辈的节点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/html   查询到一个结果</span><br><span class="line">/div    查询到0个结果，因为根节点以下只有一个html子节点</span><br><span class="line">/html/body  查询到1个结果</span><br></pre></td></tr></table></figure>
+
+<h3 id="“-”-查询所有子孙节点"><a href="#“-”-查询所有子孙节点" class="headerlink" title="“//”  查询所有子孙节点"></a>“//”  查询所有子孙节点</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//head/script</span><br><span class="line">//div</span><br></pre></td></tr></table></figure>
+
+<h3 id="“-”-选取当前节点"><a href="#“-”-选取当前节点" class="headerlink" title="“.”   选取当前节点"></a>“.”   选取当前节点</h3><h3 id="“-”-选取当前节点的父节点"><a href="#“-”-选取当前节点的父节点" class="headerlink" title="“..”  选取当前节点的父节点"></a>“..”  选取当前节点的父节点</h3><h3 id="“-”-选取属性"><a href="#“-”-选取属性" class="headerlink" title="“@”   选取属性"></a>“@”   选取属性</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//div[@id]  选择所有带有id属性的div元素</span><br><span class="line">&lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot; data-lg-tj-track-code=&quot;index_navigation&quot; data-lg-tj-track-type=&quot;1&quot;&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="2-谓语"><a href="#2-谓语" class="headerlink" title="2.谓语"></a>2.谓语</h2><h3 id="谓语是用来查找某个特定的节点或者包含某个指定的值的节点，被嵌在方括号中。"><a href="#谓语是用来查找某个特定的节点或者包含某个指定的值的节点，被嵌在方括号中。" class="headerlink" title="谓语是用来查找某个特定的节点或者包含某个指定的值的节点，被嵌在方括号中。"></a>谓语是用来查找某个特定的节点或者包含某个指定的值的节点，被嵌在方括号中。</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">//body/div[1]                body下的第一个div元素</span><br><span class="line">//body/div[last()]           body下的最后一个div元素</span><br><span class="line">//body/div[position()&lt;3]     body下的位置小于3的元素</span><br><span class="line">//div[@id]                   div下带id属性的元素</span><br><span class="line"></span><br><span class="line">&lt;div id=&quot;sidebar&quot; class=&quot;sidebar&quot; data-lg-tj-track-code=&quot;index_navigation&quot; data-lg-tj-track-type=&quot;1&quot;&gt;</span><br><span class="line">//input[@id=&quot;serverTime&quot;]input下id=&quot;serverTime&quot;的元素</span><br></pre></td></tr></table></figure>
+
+<h3 id="模糊匹配"><a href="#模糊匹配" class="headerlink" title="模糊匹配"></a>模糊匹配</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">//div[contains(@class,&apos;f1&apos;)] div的class属性带有f1的</span><br><span class="line">通配符 *</span><br><span class="line">//body/*                    body下面所有的元素</span><br><span class="line">//div[@*]                   只要有用属性的div元素</span><br><span class="line">//div[@id=&apos;footer&apos;]    //div  带有id=&apos;footer&apos;属性的div下的所有div元素</span><br><span class="line">//div[@class=&apos;job_bt&apos;] //dd[@class=&apos;job-advantage&apos;]</span><br></pre></td></tr></table></figure>
+
+<h3 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">//div[@class=&apos;job_detail&apos;] and @id=&apos;job_tent&apos;</span><br><span class="line">//book/title | //book/price  选取 book 元素的所有 title 和 price 元素。也可以百度搜索XPath语法</span><br><span class="line"></span><br><span class="line">.//a/text()         当前标签下所有a标签的文字内容</span><br><span class="line">//tr[position()&gt;1 and position()&lt;11] 位置大于1小于11</span><br></pre></td></tr></table></figure>
+
+<h2 id="3-需要注意的知识点"><a href="#3-需要注意的知识点" class="headerlink" title="3.需要注意的知识点"></a>3.需要注意的知识点</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">1./和//的区别：/代表子节点，//代表子孙节点，//用的比较多</span><br><span class="line"></span><br><span class="line">2.contains有时候某个属性中包含了多个值，那么使用contains函数//div[contains(@class,&apos;lg&apos;)]</span><br><span class="line"></span><br><span class="line">3.谓语中的下标是从1开始的，不是从0开始的</span><br></pre></td></tr></table></figure>
+
+<h2 id="最后注明引用和参考的网址"><a href="#最后注明引用和参考的网址" class="headerlink" title="最后注明引用和参考的网址"></a>最后注明引用和参考的网址</h2><p><a href="https://www.cnblogs.com/xufengnian/p/10788195.html" target="_blank" rel="noopener">https://www.cnblogs.com/xufengnian/p/10788195.html</a><br><a href="https://www.w3school.com.cn/xpath/xpath_syntax.asp" target="_blank" rel="noopener">https://www.w3school.com.cn/xpath/xpath_syntax.asp</a></p>
+
+        </div>
+        <footer class="article-footer">
+            
+
+
+
+    <a data-url="https://yingjunyu.github.io/2019/09/26/xpath语法/" data-id="ck23bxzop000fi092k27tegik" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+<script>
+    (function ($) {
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+        </footer>
+    </div>
+</article>
+
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+
+                        </div>
+                    </section>
+                    <aside id="sidebar">
+    <a class="sidebar-toggle" title="Expand Sidebar"><i class="toggle icon"></i></a>
+    <div class="sidebar-top">
+        <p>关注我 :</p>
+        <ul class="social-links">
+            
+                
+                <li>
+                    <a class="social-tooltip" title="twitter" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-twitter"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="facebook" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-facebook"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="google-plus" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-google-plus"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="github" href="https://github.com/ppoffice/hexo-theme-hueman" target="_blank" rel="noopener">
+                        <i class="icon fa fa-github"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="weibo" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-weibo"></i>
+                    </a>
+                </li>
+                
+            
+                
+                <li>
+                    <a class="social-tooltip" title="rss" href="/" target="_blank" rel="noopener">
+                        <i class="icon fa fa-rss"></i>
+                    </a>
+                </li>
+                
+            
+        </ul>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2019/09/26/Anaconda常用的简单命令/" id="article-nav-newer" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">下一篇</strong>
+        <p class="article-nav-title">
+        
+            Anaconda常用的简单命令
+        
+        </p>
+        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
+    </a>
+    
+    
+        <a href="/2019/08/19/20190819-Scrapy学习-爬取基金基本信息和Logging使用/" id="article-nav-older" class="article-nav-link-wrap">
+        <strong class="article-nav-caption">上一篇</strong>
+        <p class="article-nav-title">20190819-Scrapy学习-爬取基金基本信息和Logging使用</p>
+        <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
+        </a>
+    
+</nav>
+
+    
+    <div class="widgets-container">
+        
+            
+                
+
+            
+                
+    <div class="widget-wrap">
+        <h3 class="widget-title">最新文章</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/23/studio升级后gradle报错问题/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/10/23/studio升级后gradle报错问题/000.png)" alt="studio升级后gradle报错问题" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/23/studio升级后gradle报错问题/" class="title">studio升级后gradle报错问题</a></p>
+                            <p class="item-date"><time datetime="2019-10-23T13:39:25.000Z" itemprop="datePublished">2019-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/23/hello-world/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/23/hello-world/" class="title">Hello World</a></p>
+                            <p class="item-date"><time datetime="2019-10-23T11:02:07.288Z" itemprop="datePublished">2019-10-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/10/22/Django缓存系统/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/10/22/Django缓存系统/Django%E7%BC%93%E5%AD%98%E7%B3%BB%E7%BB%9F.png)" alt="Django缓存系统" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/10/22/Django缓存系统/" class="title">Django缓存系统</a></p>
+                            <p class="item-date"><time datetime="2019-10-22T09:08:01.000Z" itemprop="datePublished">2019-10-22</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/26/ionic4集成高德地图/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4集成高德地图/01.png)" alt="ionic4集成高德地图" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/09/26/ionic4集成高德地图/" class="title">ionic4集成高德地图</a></p>
+                            <p class="item-date"><time datetime="2019-09-26T15:27:42.000Z" itemprop="datePublished">2019-09-26</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2019/09/26/ionic4路由跳转/" class="thumbnail">
+    
+    
+        <span style="background-image:url(//yingjunyu.github.io/2019/09/26/ionic4路由跳转/01.png)" alt="ionic4路由跳转" class="thumbnail-image"></span>
+    
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2019/09/26/ionic4路由跳转/" class="title">ionic4路由跳转</a></p>
+                            <p class="item-date"><time datetime="2019-09-26T15:12:07.000Z" itemprop="datePublished">2019-09-26</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+            
+                
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">归档</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/10/">十月 2019</a><span class="archive-list-count">3</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/09/">九月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/08/">八月 2019</a><span class="archive-list-count">4</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2019/07/">七月 2019</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/12/">十二月 2018</a><span class="archive-list-count">2</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/08/">八月 2018</a><span class="archive-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">标签</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ANDROID/">ANDROID</a><span class="tag-list-count">1</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/IONIC/">IONIC</a><span class="tag-list-count">3</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/PYTHON/">PYTHON</a><span class="tag-list-count">11</span></li></ul>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-float">
+        <h3 class="widget-title">标签云</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/ANDROID/" style="font-size: 10px;">ANDROID</a> <a href="/tags/IONIC/" style="font-size: 15px;">IONIC</a> <a href="/tags/PYTHON/" style="font-size: 20px;">PYTHON</a>
+        </div>
+    </div>
+
+
+            
+                
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">链接</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+            
+        
+    </div>
+</aside>
+
+                </div>
+            </div>
+        </div>
+        <footer id="footer">
+    <div class="container">
+        <div class="container-inner">
+            <a id="back-to-top" href="javascript:;"><i class="icon fa fa-angle-up"></i></a>
+            <div class="credit">
+                <h1 class="logo-wrap">
+                    <a href="/" class="logo"></a>
+                </h1>
+                <p>&copy; 2019 John Doe</p>
+                <p>Powered by <a href="//hexo.io/" target="_blank">Hexo</a>. Theme by <a href="//github.com/ppoffice" target="_blank">PPOffice</a></p>
+            </div>
+            <div class="footer-plugins">
+              
+    
+
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        
+    
+    <script>
+    var disqus_shortname = 'hexo-theme-hueman';
+    
+    
+    var disqus_url = 'https://yingjunyu.github.io/2019/09/26/xpath语法/';
+    
+    (function() {
+    var dsq = document.createElement('script');
+    dsq.type = 'text/javascript';
+    dsq.async = true;
+    dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+    (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+    </script>
+
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
