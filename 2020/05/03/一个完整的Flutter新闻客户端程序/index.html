@@ -6,26 +6,26 @@
     
 
     
-    <title>Django2初步使用-静态文件加载-20190801 | Hexo</title>
+    <title>一个完整的Flutter新闻客户端程序 | Hexo</title>
     
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
-        <meta name="keywords" content="PYTHON">
+        <meta name="keywords" content="FLUTTER">
     
-    <meta name="description" content="Django2初步使用-静态文件加载1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹2、在工程的settings.py中配置，如下图所示： 3、前端引入，例如index.html文件，如下图所示： 4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。最后感谢简书作者文章，附上链接">
-<meta name="keywords" content="PYTHON">
+    <meta name="description" content="1.目标：1).首页滚动新闻2).首页显示10条新闻，下拉刷新，上滑加载更多3).调用原生浏览器打开新闻详细页面4).可以添加收藏、删除收藏、显示收藏5).新闻分类访问2.技术：1).使用免费的API接口从网络获取数据，本例采用api.tianapi.com2).网络访问，json解析3).shared_preferences保存本地数据，fluttertoast显示对话框4).flutter_n">
+<meta name="keywords" content="FLUTTER">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Django2初步使用-静态文件加载-20190801">
-<meta property="og:url" content="https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/index.html">
+<meta property="og:title" content="一个完整的Flutter新闻客户端程序">
+<meta property="og:url" content="https://yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Django2初步使用-静态文件加载1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹2、在工程的settings.py中配置，如下图所示： 3、前端引入，例如index.html文件，如下图所示： 4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。最后感谢简书作者文章，附上链接">
+<meta property="og:description" content="1.目标：1).首页滚动新闻2).首页显示10条新闻，下拉刷新，上滑加载更多3).调用原生浏览器打开新闻详细页面4).可以添加收藏、删除收藏、显示收藏5).新闻分类访问2.技术：1).使用免费的API接口从网络获取数据，本例采用api.tianapi.com2).网络访问，json解析3).shared_preferences保存本地数据，fluttertoast显示对话框4).flutter_n">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/001.png">
-<meta property="og:updated_time" content="2019-08-01T09:42:01.564Z">
+<meta property="og:image" content="https://yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/01.jpg">
+<meta property="og:updated_time" content="2020-05-03T09:19:09.420Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Django2初步使用-静态文件加载-20190801">
-<meta name="twitter:description" content="Django2初步使用-静态文件加载1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹2、在工程的settings.py中配置，如下图所示： 3、前端引入，例如index.html文件，如下图所示： 4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。最后感谢简书作者文章，附上链接">
-<meta name="twitter:image" content="https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/001.png">
+<meta name="twitter:title" content="一个完整的Flutter新闻客户端程序">
+<meta name="twitter:description" content="1.目标：1).首页滚动新闻2).首页显示10条新闻，下拉刷新，上滑加载更多3).调用原生浏览器打开新闻详细页面4).可以添加收藏、删除收藏、显示收藏5).新闻分类访问2.技术：1).使用免费的API接口从网络获取数据，本例采用api.tianapi.com2).网络访问，json解析3).shared_preferences保存本地数据，fluttertoast显示对话框4).flutter_n">
+<meta name="twitter:image" content="https://yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/01.jpg">
     
 
     
@@ -138,14 +138,14 @@
     </h1>
 </div>
                         <div class="main-body-content">
-                            <article id="post-Django2初步使用-静态文件加载-20190801" class="article article-single article-type-post" itemscope itemprop="blogPost">
+                            <article id="post-一个完整的Flutter新闻客户端程序" class="article article-single article-type-post" itemscope itemprop="blogPost">
     <div class="article-inner">
         
             <header class="article-header">
                 
     
         <h1 class="article-title" itemprop="name">
-        Django2初步使用-静态文件加载-20190801
+        一个完整的Flutter新闻客户端程序
         </h1>
     
 
@@ -155,24 +155,22 @@
             <div class="article-meta">
                 
     <div class="article-date">
-        <a href="/2019/08/01/Django2初步使用-静态文件加载-20190801/" class="article-date">
-            <time datetime="2019-08-01T09:32:16.000Z" itemprop="datePublished">2019-08-01</time>
+        <a href="/2020/05/03/一个完整的Flutter新闻客户端程序/" class="article-date">
+            <time datetime="2020-05-03T09:08:15.000Z" itemprop="datePublished">2020-05-03</time>
         </a>
     </div>
 
                 
     <div class="article-tag">
         <i class="fa fa-tag"></i>
-        <a class="tag-link" href="/tags/PYTHON/">PYTHON</a>
+        <a class="tag-link" href="/tags/FLUTTER/">FLUTTER</a>
     </div>
 
             </div>
         
         
         <div class="article-entry" itemprop="articleBody">
-            <h2 id="Django2初步使用-静态文件加载"><a href="#Django2初步使用-静态文件加载" class="headerlink" title="Django2初步使用-静态文件加载"></a>Django2初步使用-静态文件加载</h2><h3 id="1、在django-project中创建-static文件夹，需要在工程的根目录自己创建static文件夹"><a href="#1、在django-project中创建-static文件夹，需要在工程的根目录自己创建static文件夹" class="headerlink" title="1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹"></a>1、在django project中创建 static文件夹，需要在工程的根目录自己创建static文件夹</h3><h3 id="2、在工程的settings-py中配置，如下图所示："><a href="#2、在工程的settings-py中配置，如下图所示：" class="headerlink" title="2、在工程的settings.py中配置，如下图所示："></a>2、在工程的settings.py中配置，如下图所示：</h3><p><img src="//yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/001.png" alt="001"></p>
-<h3 id="3、前端引入，例如index-html文件，如下图所示："><a href="#3、前端引入，例如index-html文件，如下图所示：" class="headerlink" title="3、前端引入，例如index.html文件，如下图所示："></a>3、前端引入，例如index.html文件，如下图所示：</h3><p><img src="//yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/002.png" alt="002"></p>
-<h3 id="4、完成以上几步以后，在views-py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。"><a href="#4、完成以上几步以后，在views-py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。" class="headerlink" title="4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。"></a>4、完成以上几步以后，在views.py里面就可以用render方法进行渲染，配置好urls路径后就可以正常显示。</h3><h3 id="最后感谢简书作者文章，附上链接：https-www-jianshu-com-p-bb9ae71f4a7b"><a href="#最后感谢简书作者文章，附上链接：https-www-jianshu-com-p-bb9ae71f4a7b" class="headerlink" title="最后感谢简书作者文章，附上链接：https://www.jianshu.com/p/bb9ae71f4a7b"></a>最后感谢简书作者文章，附上链接：<a href="https://www.jianshu.com/p/bb9ae71f4a7b" target="_blank" rel="noopener">https://www.jianshu.com/p/bb9ae71f4a7b</a></h3><p>附上项目的效果图如下：<br><img src="//yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/003.png" alt="003"></p>
+            <h3 id="1-目标："><a href="#1-目标：" class="headerlink" title="1.目标："></a>1.目标：</h3><h4 id="1-首页滚动新闻"><a href="#1-首页滚动新闻" class="headerlink" title="1).首页滚动新闻"></a>1).首页滚动新闻</h4><h4 id="2-首页显示10条新闻，下拉刷新，上滑加载更多"><a href="#2-首页显示10条新闻，下拉刷新，上滑加载更多" class="headerlink" title="2).首页显示10条新闻，下拉刷新，上滑加载更多"></a>2).首页显示10条新闻，下拉刷新，上滑加载更多</h4><h4 id="3-调用原生浏览器打开新闻详细页面"><a href="#3-调用原生浏览器打开新闻详细页面" class="headerlink" title="3).调用原生浏览器打开新闻详细页面"></a>3).调用原生浏览器打开新闻详细页面</h4><h4 id="4-可以添加收藏、删除收藏、显示收藏"><a href="#4-可以添加收藏、删除收藏、显示收藏" class="headerlink" title="4).可以添加收藏、删除收藏、显示收藏"></a>4).可以添加收藏、删除收藏、显示收藏</h4><h4 id="5-新闻分类访问"><a href="#5-新闻分类访问" class="headerlink" title="5).新闻分类访问"></a>5).新闻分类访问</h4><h3 id="2-技术："><a href="#2-技术：" class="headerlink" title="2.技术："></a>2.技术：</h3><h4 id="1-使用免费的API接口从网络获取数据，本例采用api-tianapi-com"><a href="#1-使用免费的API接口从网络获取数据，本例采用api-tianapi-com" class="headerlink" title="1).使用免费的API接口从网络获取数据，本例采用api.tianapi.com"></a>1).使用免费的API接口从网络获取数据，本例采用api.tianapi.com</h4><h4 id="2-网络访问，json解析"><a href="#2-网络访问，json解析" class="headerlink" title="2).网络访问，json解析"></a>2).网络访问，json解析</h4><h4 id="3-shared-preferences保存本地数据，fluttertoast显示对话框"><a href="#3-shared-preferences保存本地数据，fluttertoast显示对话框" class="headerlink" title="3).shared_preferences保存本地数据，fluttertoast显示对话框"></a>3).shared_preferences保存本地数据，fluttertoast显示对话框</h4><h4 id="4-flutter-native-web调用原生webview显示新闻详细内容"><a href="#4-flutter-native-web调用原生webview显示新闻详细内容" class="headerlink" title="4).flutter_native_web调用原生webview显示新闻详细内容"></a>4).flutter_native_web调用原生webview显示新闻详细内容</h4><h3 id="3-具体实现："><a href="#3-具体实现：" class="headerlink" title="3.具体实现："></a>3.具体实现：</h3><h4 id="1-具体代码已上传至github，地址是：https-github-com-yingjunyu-flutter-news-app"><a href="#1-具体代码已上传至github，地址是：https-github-com-yingjunyu-flutter-news-app" class="headerlink" title="1).具体代码已上传至github，地址是：https://github.com/yingjunyu/flutter_news_app"></a>1).具体代码已上传至github，地址是：<a href="https://github.com/yingjunyu/flutter_news_app" target="_blank" rel="noopener">https://github.com/yingjunyu/flutter_news_app</a></h4><h4 id="2-详细实现就不累述了，其实也是最基本flutter技术，贴上主界面图一张"><a href="#2-详细实现就不累述了，其实也是最基本flutter技术，贴上主界面图一张" class="headerlink" title="2).详细实现就不累述了，其实也是最基本flutter技术，贴上主界面图一张"></a>2).详细实现就不累述了，其实也是最基本flutter技术，贴上主界面图一张</h4><p><img src="//yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/01.jpg" alt="001"></p>
 
         </div>
         <footer class="article-footer">
@@ -180,7 +178,7 @@
 
 
 
-    <a data-url="https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/" data-id="ck9quij9u0006tw921n20w0gw" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
+    <a data-url="https://yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/" data-id="ck9quija5000dtw92qxbr3ren" class="article-share-link"><i class="fa fa-share"></i>分享到</a>
 <script>
     (function ($) {
         $('body').on('click', function() {
@@ -317,20 +315,10 @@
         
 <nav id="article-nav">
     
-        <a href="/2019/08/18/Django2动态渲染页面学习/" id="article-nav-newer" class="article-nav-link-wrap">
-        <strong class="article-nav-caption">下一篇</strong>
-        <p class="article-nav-title">
-        
-            Django2动态渲染页面学习
-        
-        </p>
-        <i class="icon fa fa-chevron-right" id="icon-chevron-right"></i>
-    </a>
     
-    
-        <a href="/2019/07/25/XAdmin与Django2集成体会/" id="article-nav-older" class="article-nav-link-wrap">
+        <a href="/2020/05/03/分享一次参加“教练型”领导培训的心得/" id="article-nav-older" class="article-nav-link-wrap">
         <strong class="article-nav-caption">上一篇</strong>
-        <p class="article-nav-title">XAdmin与Django2集成体会</p>
+        <p class="article-nav-title">分享一次参加“教练型”领导培训的心得</p>
         <i class="icon fa fa-chevron-left" id="icon-chevron-left"></i>
         </a>
     
@@ -537,7 +525,7 @@
     var disqus_shortname = 'hexo-theme-hueman';
     
     
-    var disqus_url = 'https://yingjunyu.github.io/2019/08/01/Django2初步使用-静态文件加载-20190801/';
+    var disqus_url = 'https://yingjunyu.github.io/2020/05/03/一个完整的Flutter新闻客户端程序/';
     
     (function() {
     var dsq = document.createElement('script');
